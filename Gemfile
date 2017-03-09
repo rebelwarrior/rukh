@@ -6,26 +6,29 @@ ruby '2.3.1', :engine => 'jruby',
   :engine_version => '9.1.8.0'
 gem 'jruby-jars', '9.1.8.0' #Now explicitly calling jruby-jars version
 
-gem 'rails', '4.2.7.1' 
+gem 'rails'#, '4.2.7.1' 
 
 platforms :jruby do
   group :development,:test do
-    gem 'activerecord-jdbcsqlite3-adapter'
+    # gem 'activerecord-jdbcsqlite3-adapter'
+    gem 'activerecord-jdbc-adapter', git: 'https://github.com/jruby/activerecord-jdbc-adapter.git', branch: 'rails-5'
   end
   group :production do
     #ProcfileHeroku: web: bundle exec rails server puma -p $PORT -e $RACK_ENV
     case server
     when 'heroku', 'postgresql'
-      gem 'activerecord-jdbcpostgresql-adapter', '~> 1.3.20' #TODO pull rails 5 version off github
+      # gem 'activerecord-jdbcpostgresql-adapter', '~> 1.3.20' #TODO pull rails 5 version off github
     when 'sql'
-      gem 'activerecord-jdbcmssql-adapter', '~> 1.3.20'
+      # gem 'activerecord-jdbcmssql-adapter', '~> 1.3.20'
     when 'mysql', 'mariadb'
-      gem 'activerecord-jdbcmysql-adapter', '~> 1.3.20'
+      # gem 'activerecord-jdbcmysql-adapter', '~> 1.3.20'
     when 'sqlite'
       # gem 'activerecord-jdbcsqlite3-adapter' 
+      gem 'activerecord-jdbcsqlite3-adapter', git: 'https://github.com/jruby/activerecord-jdbc-adapter.git', branch: 'rails-5'
     end
   end
-  gem 'activerecord-jdbc-adapter', '~> 1.3.20'
+  # gem 'activerecord-jdbc-adapter', '~> 1.3.20'
+  # gem 'activerecord-jdbc-adapter', git: 'https://github.com/jruby/activerecord-jdbc-adapter.git', branch: 'rails5'
   gem 'therubyrhino'  # JavaScript library
 end
 
@@ -38,14 +41,14 @@ gem 'bootstrap-sass'
 gem 'haml-rails'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 2.7.2'
+gem 'uglifier'#, '>= 2.7.2'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.2' #'~> 4.1.0'
 
 # Use jquery as the JavaScript library jquery-ui as the widget library
 gem 'jquery-rails'
-gem 'jquery-ui-rails', '~> 5.0.5'
+gem 'jquery-ui-rails'#, '~> 5.0.5'
 
 # Turbolinks makes following links in your web application faster. 
 # Read more: https://github.com/rails/turbolinks
@@ -53,17 +56,17 @@ gem 'jquery-ui-rails', '~> 5.0.5'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.4.1'
+gem 'jbuilder'#, '~> 2.4.1'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt'##, '~> 3.1.10'
 gem 'devise'##, '~> 3.5.6'
 
 # Time Zone info data (for Rails 4.1)
-gem 'tzinfo-data', '1.2016.10', platforms: :jruby
+gem 'tzinfo-data'#, '1.2016.10', platforms: :jruby
 
 # Markdown
-gem 'kramdown', '~> 1.10.0' 
+gem 'kramdown'#, '~> 1.10.0' 
 
 # Pagination
 gem 'will_paginate'#, '~> 3.0.7' 
@@ -117,10 +120,10 @@ end
 
 platforms :ruby do
   group :development do
-    gem 'sqlite3'
+    # gem 'sqlite3'
   end
   group :production do
-    gem 'therubyracer' # JavaScript library
-    gem 'pg'           # Heroku db (PostgresQL)
+    # gem 'therubyracer' # JavaScript library
+    # gem 'pg'           # Heroku db (PostgresQL)
   end
 end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
 
-  root 'static_pages#home'
+  root                    to: 'static_pages#home'
   
   match '/help',          to: 'static_pages#help',    via: :get
   match '/home',          to: 'static_pages#home',    via: :get

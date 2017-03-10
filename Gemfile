@@ -4,7 +4,7 @@ server = ['sql', 'mysql', 'heroku', 'sqlite'][3] #remember to change config/data
 #ruby=jruby-9.1.8.0
 ruby '2.3.1', :engine => 'jruby',
   :engine_version => '9.1.8.0'
-gem 'jruby-jars', '9.1.8.0' #Now explicitly calling jruby-jars version
+gem 'jruby-jars', '9.1.8.0', group: :develpment #Now explicitly calling jruby-jars version
 
 gem 'rails'#, '4.2.7.1' 
 
@@ -33,7 +33,7 @@ platforms :jruby do
 end
 
 # Puma as server
-gem 'puma'
+gem 'puma' #may not be necessary to explicitly put here
 
 # Use SCSS for stylesheets
 gem 'sass-rails'

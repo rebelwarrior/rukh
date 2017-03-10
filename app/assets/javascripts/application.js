@@ -16,8 +16,7 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
-//= require jquery-ui/datepicker
-//= require jquery-ui/datepicker-es
+//= require jquery-ui/widgets/datepicker
 	
 // Fix for Turbolinks disabling native load-bar. This creates a load-bar atop the page.	
 Turbolinks.enableProgressBar();	

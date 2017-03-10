@@ -66,7 +66,10 @@ class DebtsController < ApplicationController
     respond_to do |format|
       format.html
       format.xls 
-      format.xlsx
+      format.xlsx 
+      # {
+      #   response.headers['Content-Disposition'] = 'attachment; filename="debts.xlsx"'
+      # }
       format.csv {send_data @debts_all.to_csv}
     end
   end

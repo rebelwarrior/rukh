@@ -44,7 +44,7 @@ gem 'haml-rails'
 gem 'uglifier'#, '>= 2.7.2'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.2' #'~> 4.1.0'
+gem 'coffee-rails'#, '~> 4.2' #'~> 4.1.0'
 
 # Use jquery as the JavaScript library jquery-ui as the widget library
 gem 'jquery-rails'
@@ -102,6 +102,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   # Guard
   gem 'guard-jruby-rspec', require: false, platform: :jruby
+  # mjruby -S rails 
+  gem 'mjruby', require: false, platform: :jruby 
 end
 
 group :test do

@@ -21,7 +21,15 @@
   .col-xs-6{style: 'margin-top: 15px'}
     = submit_tag "Importar", class: 'btn'
   
-:coffee
-  source = new EventSource('/import/status')
-  source.onmessage = (event)  ->
-    console.log event.data  
+# :coffee
+#   source = new EventSource('/import/status')
+#   source.onmessage = (event)  ->
+#     console.log event.data
+#
+# source = new EventSource('/update')
+# source.onmessage = (event)->
+#   console.log event.data
+#   percentage = 25
+#   $('#progress-bar').style.width = percentage+'%'
+#   $('#progress-bar').html(event.data)
+#

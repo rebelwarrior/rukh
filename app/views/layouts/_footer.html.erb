@@ -1,0 +1,17 @@
+<footer class='footer'>
+  <nav>
+    <ul>
+      <li>
+      </li>
+      <li>
+        <%= "usuario actual: #{ current_user.nil? ? 'ninguno' : current_user.email }" %>
+      </li>
+      <li>
+        <%= link_to '<span class="glyphicon glyphicon-question-sign"></span> Ayuda'.html_safe, help_path %>
+      </li>
+      <li>
+        <%= link_to "Usuario Nuevo", new_user_registration_path %>
+      </li>
+    </ul>
+  </nav>
+</footer>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title><%= "Rukh | #{yield :title }" %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag('application', media: 'all') %>
+    <%= javascript_include_tag('application') %>
+    <%= favicon_link_tag('favicon.ico')%>
+    <!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+    <!-- <%= render 'layouts/glyphicons' %> -->
+  </head>
+<body>
+  <%= render 'layouts/header' %>
+  <div class='container'>
+    <% flash.each do |k, v| %>
+      <% notice_hash = {'error' => 'danger', 'notice' => 'info', 'success' => 'success'} %>
+      <div class=<%= "alert alert-#{notice_hash.fetch(k, 'warning')} #{k}"%> >
+        <%= v %>
+      </div>
+    <% end %>
+    <%= yield %>
+    <%= render 'layouts/footer'%>
+    <%= debug(params) if Rails.env.development? %>
+  </div>
+  
+
+</body>
+</html>
+

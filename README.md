@@ -64,7 +64,7 @@ This app was developed using **BDD** and **Hexagonal Rails** design, that is the
 Please note the `/lib` directory is not automatically reloaded in development. 
 
 __License:__
-The code is under GPL v3.
+The code is under the MIT license. 
 
 <sup>1</sup> While Rukh works on a Windows stack a JRuby (`TCPSocket.open('ipaddrss', 25)`) bug prevented email delivery using SMTP. The final application was hosted on Linux, Windows was used as a test bed. An issue with the bug was opened on JRuby github page. This was an unfortunate event since JRuby was picked because of a need to run it on Windows. 
 

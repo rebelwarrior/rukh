@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - jruby
+  - jruby-head
 sudo: required
 # addons:
 #   apt:

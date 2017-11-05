@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
 
-#ruby=jruby-9.1.7.0
-ruby '2.3.1', :engine => 'jruby',
-  :engine_version => '9.1.7.0'
-gem 'jruby-jars', '9.1.7.0' #Now explicitly calling jruby-jars version
+ruby '2.4.1', :engine => 'jruby'
 
 gem 'rails', '4.2.7.1' 
 

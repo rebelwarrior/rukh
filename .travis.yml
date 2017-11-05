@@ -8,8 +8,8 @@ sudo: required
 #       - haveged
 jdk:
   - oraclejdk8
-# gemfile:
-#   config/Gemfile.ci
+gemfile:
+  config/Gemfile.ci
 env:
   - DB=sqlite
 bundler_args: --without production

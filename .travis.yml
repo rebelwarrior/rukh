@@ -1,15 +1,15 @@
 language: ruby
 rvm:
-  - jruby-9.1.7.0
+  - jruby
 sudo: required
-addons:
-  apt:
-    packages:
-      - haveged
+# addons:
+#   apt:
+#     packages:
+#       - haveged
 jdk:
   - oraclejdk8
-gemfile:
-  config/Gemfile.ci
+# gemfile:
+#   config/Gemfile.ci
 env:
   - DB=sqlite
 bundler_args: --without production
@@ -18,40 +18,7 @@ before_script:
   # - bundle exec rake db:create RAILS_ENV=test
   # - bundle exec rake db:setup RAILS_ENV=test
   # - bundle exec rake db:schema:load RAILS_ENV=test
-  - cat config/database.yml
-  - bundle exec rake db:migrate RAILS_ENV=test
+  # - cat config/database.yml
+  # - bundle exec rake db:migrate RAILS_ENV=test
 script:
   - bundle exec rspec spec
-
-
-# language: ruby
-# rvm:
-#   - jruby-9.1.5.0
-# jdk:
-#   # - oraclejdk8
-#   - openjdk7
-# env:
-#   - DB=sqlite
-# before_script:
-#   - bundle exec rake setup:travis
-#   - bundle exec rake db:create RAILS_ENV=test
-#   - bundle exec rake db:schema:load RAILS_ENV=test
-#   - bundle exec rake db:migrate RAILS_ENV=test
-# script:
-#   - bundle exec rspec spec
-#
-#
-# - bundle exec rake spec
-  
-  
-#  - bundle exec rake db:schema:load
-#  - bundle exec rake db:test:prepare NOOP now
-#  - bundle exec rake db:migrate RAILS_ENV=test
-#  - bundle exec rspec spec/ --dry-run
-  
-  
-# - bundle exec rake db:test:prepare
-# - RAILS_ENV=test bundle exec rake db:migrate --trace
-
-#  - bundle exec rake db:schema:load
-#  - RAILS_ENV=test bundle exec rake --trace db:migrate

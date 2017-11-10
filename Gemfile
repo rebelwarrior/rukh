@@ -3,8 +3,8 @@ server = ['sql', 'mysql', 'heroku', 'sqlite'][3] #remember to change config/data
 
 #ruby=jruby-9.1.13.0
 ruby '2.3.3', :engine => 'jruby',
-  :engine_version => '9.1.13.0'
-gem 'jruby-jars', '9.1.13.0' #Now explicitly calling jruby-jars version
+  :engine_version => '9.1.14.0'
+gem 'jruby-jars', '9.1.14.0' #Now explicitly calling jruby-jars version
 
 gem 'rails', '~> 4.2.10' 
 
@@ -108,6 +108,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'simplecov', :require => false
   # Capybara (Integration Tests)
   gem 'faker'
   gem 'capybara'

@@ -46,4 +46,6 @@ config/database.yml
 #Ignore sass-cache
 /.sass-cache
 
+#Ignore simple-cov
+/coverage
 

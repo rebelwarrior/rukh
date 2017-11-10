@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.1', :engine => 'jruby'
+# ruby '2.4.1', :engine => 'jruby'
 
 gem 'rails', '4.2.7.1' 
 
